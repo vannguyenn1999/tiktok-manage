@@ -1,15 +1,35 @@
 
-import { Avatar, Button, Table } from "flowbite-react";
-import { DATA_USER } from "src/helper/CustomData";
+import { Avatar, Table } from "flowbite-react";
 import { Icon } from "@iconify/react";
+import { useState } from "react";
+
+import { DATA_USER } from "src/helper/CustomData";
+import AddUser from "./AddUser";
+import { TYPE_USER } from "src/helper/type";
 
 const CommentManage = () => {
+  const [dataUser, setDataUser] = useState(DATA_USER)
+
+  const handeleDeleteUser = (id: string) => {
+    try {
+      const result = dataUser.filter((item) => item.id != id)
+      setDataUser(result)
+    } catch (error) {
+    }
+  }
+
+  const handleAddUser = (data: TYPE_USER) => {
+    try {
+      setDataUser([data, ...dataUser])
+    } catch (error) {
+    }
+  }
+
   return (
     <div className="bg-white p-5 rounded-xl">
       <div className="flex py-2 items-center justify-end">
-        <Button>
-          <Icon icon='solar:user-plus-bold' height={18} />
-          Thêm tài khoản</Button>
+        <AddUser handleAddUser={handleAddUser} />
+
       </div>
       <div className="overflow-x-auto">
         <Table hoverable className="border rounded-lg">
@@ -25,7 +45,7 @@ const CommentManage = () => {
           </Table.Head>
           <Table.Body className="divide-y">
             {
-              DATA_USER.map((item) => (
+              dataUser.map((item) => (
                 <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800" key={item.id}>
                   <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white ">
                     <a href={item.user.link_tiktok} target="_blank" rel="noopener noreferrer" className="flex items-center justify-start">
@@ -39,7 +59,7 @@ const CommentManage = () => {
                   <Table.Cell className="text-center">{item.statistical.count_view_profile}</Table.Cell>
                   <Table.Cell className="text-center">{item.statistical.count_following}</Table.Cell>
                   <Table.Cell className="text-center">{item.statistical.count_share}</Table.Cell>
-                  <Table.Cell className="text-center"><Icon icon='solar:trash-bin-trash-bold-duotone' height={18} /></Table.Cell>
+                  <Table.Cell className="text-center" onClick={() => handeleDeleteUser(item.id)}><Icon icon='solar:trash-bin-trash-bold-duotone' height={18} /></Table.Cell>
                 </Table.Row>
               ))
             }
