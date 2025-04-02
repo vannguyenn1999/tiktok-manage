@@ -9,7 +9,7 @@ type ChartsBarProps = {
 }
 
 const ChartsBar: FC<ChartsBarProps> = ({ data, categories, title }) => {
-    const [state, setState] = useState<{
+    const [state,] = useState<{
         series: { data: number[] }[];
         options: ApexOptions;
     }>({
@@ -47,7 +47,7 @@ const ChartsBar: FC<ChartsBarProps> = ({ data, categories, title }) => {
     });
 
     return (
-        <div className='bg-white rounded-xl p-4'>
+        <div className='bg-white dark:bg-gray-200 rounded-xl p-4'>
             <div id="chart">
                 <ReactApexChart
                     options={state.options}

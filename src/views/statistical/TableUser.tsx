@@ -1,5 +1,5 @@
 
-import { Avatar, Checkbox, Table } from "flowbite-react";
+import { Avatar, Table } from "flowbite-react";
 import { DATA_USER } from "src/helper/CustomData";
 
 const TableUser = () => {
@@ -8,18 +8,18 @@ const TableUser = () => {
             <Table hoverable className="border rounded-lg">
                 <Table.Head>
                     <Table.HeadCell>Kênh</Table.HeadCell>
-                    <Table.HeadCell className="text-center">Lượt xem video</Table.HeadCell>
-                    <Table.HeadCell className="text-center">Bình luận</Table.HeadCell>
-                    <Table.HeadCell className="text-center">Lượt thích</Table.HeadCell>
-                    <Table.HeadCell className="text-center">Lượt xem trang cá nhân</Table.HeadCell>
-                    <Table.HeadCell className="text-center">Người theo dõi</Table.HeadCell>
-                    <Table.HeadCell className="text-center">Chia sẻ</Table.HeadCell>
+                    <Table.HeadCell className="text-center dark:bg-gray-200 text-gray-900">Lượt xem video</Table.HeadCell>
+                    <Table.HeadCell className="text-center dark:bg-gray-200 text-gray-900">Bình luận</Table.HeadCell>
+                    <Table.HeadCell className="text-center dark:bg-gray-200 text-gray-900">Lượt thích</Table.HeadCell>
+                    <Table.HeadCell className="text-center dark:bg-gray-200 text-gray-900">Lượt xem trang cá nhân</Table.HeadCell>
+                    <Table.HeadCell className="text-center dark:bg-gray-200 text-gray-900">Người theo dõi</Table.HeadCell>
+                    <Table.HeadCell className="text-center dark:bg-gray-200 text-gray-900">Chia sẻ</Table.HeadCell>
                 </Table.Head>
                 <Table.Body className="divide-y">
                     {
                         DATA_USER.map((item) => (
-                            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800" key={item.id}>
-                                <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white ">
+                            <Table.Row className="bg-white dark:border-gray-700 text-gray-900 dark:bg-gray-200  " key={item.id}>
+                                <Table.Cell className="whitespace-nowrap font-medium">
                                     <a href={item.user.link_tiktok} target="_blank" rel="noopener noreferrer" className="flex items-center justify-start">
                                         <Avatar img={item.user.avatar} alt="avatar of Jese" className="me-2" rounded />
                                         {`${item.user.tiktok_name} (@${item.user.tiktok_id})`}

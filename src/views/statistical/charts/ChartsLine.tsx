@@ -9,7 +9,7 @@ type ChartsProps = {
 }
 
 const ChartsLine: FC<ChartsProps> = ({ title, data, height }) => {
-    const [state, setState] = useState<{
+    const [state] = useState<{
         series: { name: string; data: number[] }[];
         options: ApexOptions;
     }>({
@@ -63,7 +63,7 @@ const ChartsLine: FC<ChartsProps> = ({ title, data, height }) => {
     });
 
     return (
-        <div className='bg-white rounded-xl p-4'>
+        <div className='bg-white dark:bg-gray-200 rounded-xl p-4'>
             <div id="chart">
                 {/* width="50%" */}
                 <ReactApexChart options={state.options} series={state.series} type="line" height={height} />

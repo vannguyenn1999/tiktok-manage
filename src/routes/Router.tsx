@@ -14,8 +14,6 @@ const Dashboard = Loadable(lazy(() => import('../views/dashboards/Dashboard')));
 // utilities
 const CommentManage = Loadable(lazy(() => import('../views/comment/CommentManage')));
 const Statistical = Loadable(lazy(() => import('../views/statistical/Statistical')));
-const Form = Loadable(lazy(() => import('../views/forms/Form')));
-const Shadow = Loadable(lazy(() => import('../views/shadows/Shadow')));
 
 // icons
 const Solar = Loadable(lazy(() => import('../views/icons/Solar')));
@@ -23,7 +21,6 @@ const Solar = Loadable(lazy(() => import('../views/icons/Solar')));
 // authentication
 const Login = Loadable(lazy(() => import('../views/auth/login/Login')));
 const Register = Loadable(lazy(() => import('../views/auth/register/Register')));
-const SamplePage = Loadable(lazy(() => import('../views/sample-page/SamplePage')));
 const Error = Loadable(lazy(() => import('../views/auth/error/Error')));
 
 const Router = [
@@ -54,5 +51,5 @@ const Router = [
   },
 ];
 
-const router = createBrowserRouter(Router, { basename: '/MatDash' });
+const router = createBrowserRouter(Router);
 export default router;

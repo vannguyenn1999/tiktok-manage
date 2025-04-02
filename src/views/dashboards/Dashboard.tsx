@@ -1,61 +1,31 @@
-import { Link } from 'react-router';
-import BlogCards from 'src/components/dashboard/BlogCards';
-import DailyActivity from 'src/components/dashboard/DailyActivity';
-import NewCustomers from 'src/components/dashboard/NewCustomers';
-import ProductRevenue from 'src/components/dashboard/ProductRevenue';
-import { RevenueForecast } from 'src/components/dashboard/RevenueForecast';
-import TotalIncome from 'src/components/dashboard/TotalIncome';
+import { randomDataCharts } from "src/helper/func";
+import ChartsPie from "../statistical/charts/ChartsPie";
+import PostPopular from "src/components/dashboard/PostPopular";
+import Contact from "src/components/dashboard/Contact";
+
 
 const Dashboard = () => {
   return (
-    // <div className="grid grid-cols-12 gap-30">
-    //   <div className="lg:col-span-8 col-span-12">
-    //     <RevenueForecast />
-    //   </div>
-    //   <div className="lg:col-span-4 col-span-12">
-    //     <div className="grid grid-cols-12 h-full items-stretch">
-    //       <div className="col-span-12 mb-30">
-    //         <NewCustomers />
-    //       </div>
-    //       <div className="col-span-12">
-    //         <TotalIncome />
-    //       </div>
-    //     </div>
-    //   </div>
-    //   <div className="lg:col-span-8 col-span-12">
-    //     <ProductRevenue />
-    //   </div>
-    //   <div className="lg:col-span-4 col-span-12 flex">
-    //     <DailyActivity />
-    //   </div>
-    //   <div className="col-span-12">
-    //     <BlogCards />
-    //   </div>
-    //   <div className="flex justify-center align-middle gap-2 flex-wrap col-span-12 text-center">
-    //     <p className="text-base">
-    //       Design and Developed by{' '}
-    //       <Link
-    //         to="https://adminmart.com/"
-    //         target="_blank"
-    //         className="pl-1 text-primary underline decoration-primary"
-    //       >
-    //         adminmart.com
-    //       </Link>
-    //     </p>
-    //     <p className="text-base">
-    //       Distributed by
-    //       <Link
-    //         to="https://themewagon.com/"
-    //         target="_blank"
-    //         className="pl-1 text-primary underline decoration-primary"
-    //       >
-    //         ThemeWagon
-    //       </Link>
-    //     </p>
-    //   </div>
-    // </div>
-
     <>
+      <div className="grid grid-cols-2 gap-3 mb-10">
+
+        <ChartsPie title="BÀI ĐĂNG TUẦN NÀY" data={randomDataCharts(3)} labels={["Thành công", "Đang chờ", "Lỗi"]} width={450} />
+
+        <div className='bg-white dark:bg-gray-200 rounded-xl p-4'>
+          <span className="text-gray-900 dark:text-white">
+            Thông báo của tôi
+
+          </span>
+        </div>
+      </div>
+
+      <>
+        <PostPopular />
+      </>
+
+      <>
+        <Contact />
+      </>
 
     </>
   );

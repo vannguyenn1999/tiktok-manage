@@ -1,13 +1,18 @@
-import { Label, Select } from "flowbite-react"
+import { Button, Select } from "flowbite-react"
+import { Icon } from "@iconify/react";
+
+
 import ChartsBar from "./charts/ChartsBar"
 import ChartsLine from "./charts/ChartsLine"
 import ChartsPie from "./charts/ChartsPie"
 import TableUser from "./TableUser"
+import ChartsColumn from "./charts/ChartsColumn"
+import { randomDataCharts } from "src/helper/func"
 
 const Statistical = () => {
   return (
     <>
-      <div className="flex items-center justify-end mb-10 w-full bg-white p-3 rounded-xl">
+      <div className="flex items-center justify-end mb-10 w-full bg-white dark:bg-gray-200 p-3 rounded-xl">
         <div className="max-w-md">
           <Select id="countries" required>
             <option>7 Ngày trước</option>
@@ -18,16 +23,16 @@ const Statistical = () => {
         </div>
       </div>
       <div className="grid grid-cols-3 gap-3 mb-10">
-        <ChartsLine title="Lượt xem trang" data={Array.from({ length: 10 }, () => Math.floor(Math.random() * 91) + 10)} height={200} />
-        <ChartsLine title="Lượt xem" data={Array.from({ length: 10 }, () => Math.floor(Math.random() * 91) + 10)} height={200} />
-        <ChartsLine title="Lượt thích" data={Array.from({ length: 10 }, () => Math.floor(Math.random() * 91) + 10)} height={200} />
-        <ChartsLine title="Lượt chia sẻ" data={Array.from({ length: 10 }, () => Math.floor(Math.random() * 91) + 10)} height={200} />
-        <ChartsLine title="Lượt bình luận" data={Array.from({ length: 10 }, () => Math.floor(Math.random() * 91) + 10)} height={200} />
-        <ChartsPie title="Giới tính" data={Array.from({ length: 2 }, () => Math.floor(Math.random() * 91) + 2)} labels={["Nam", "Nữ"]} />
+        <ChartsLine title="Lượt xem trang" data={randomDataCharts(10)} height={200} />
+        <ChartsLine title="Lượt xem" data={randomDataCharts(10)} height={200} />
+        <ChartsLine title="Lượt thích" data={randomDataCharts(10)} height={200} />
+        <ChartsLine title="Lượt chia sẻ" data={randomDataCharts(10)} height={200} />
+        <ChartsLine title="Lượt bình luận" data={randomDataCharts(10)} height={200} />
+        <ChartsPie title="Giới tính" data={randomDataCharts(2)} labels={["Nam", "Nữ"]} width={300} />
       </div>
 
       <div className="grid grid-cols-2 gap-4 mb-10">
-        <ChartsBar data={Array.from({ length: 10 }, () => Math.floor(Math.random() * 91) + 10)} categories={[
+        <ChartsBar data={randomDataCharts(10)} categories={[
           "South Korea",
           "Canada",
           "United Kingdom",
@@ -46,9 +51,19 @@ const Statistical = () => {
           "45-54",
           "55 +",
         ]} title="Độ tuổi" />
+
+        <ChartsColumn title="Thời gian xem nhiều nhất" data={randomDataCharts(12)} categories={["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]} />
+        <ChartsColumn title="Thời gian hoạt động nhiều nhất" data={randomDataCharts(12)} categories={["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]} />
+
       </div>
 
-      <div className="bg-white p-3 rounded-xl">
+      <div>
+
+      </div>
+      <div className="bg-white dark:bg-gray-200 p-3 rounded-xl">
+        <div className="flex items-start justify-end my-2">
+          <Button> <Icon icon='solar:export-bold' height={18} /> Xuất dữ liệu</Button>
+        </div>
         <TableUser />
       </div>
     </>
