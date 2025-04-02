@@ -13,6 +13,7 @@ const Dashboard = Loadable(lazy(() => import('../views/dashboards/Dashboard')));
 
 // utilities
 const CommentManage = Loadable(lazy(() => import('../views/comment/CommentManage')));
+const UsersManage = Loadable(lazy(() => import('../views/user/UsersManage')));
 const Statistical = Loadable(lazy(() => import('../views/statistical/Statistical')));
 
 // icons
@@ -29,8 +30,9 @@ const Router = [
     element: <FullLayout />,
     children: [
       { path: '/', exact: true, element: <Dashboard /> },
-      { path: '/ui/comment', exact: true, element: <CommentManage /> },
-      { path: '/ui/statistical', exact: true, element: <Statistical /> },
+      { path: '/user', exact: true, element: <UsersManage /> },
+      { path: '/comment', exact: true, element: <CommentManage /> },
+      { path: '/statistical', exact: true, element: <Statistical /> },
       // { path: '/ui/form', exact: true, element: <Form /> },
       // { path: '/ui/shadow', exact: true, element: <Shadow /> },
       // { path: '/icons/solar', exact: true, element: <Solar /> },

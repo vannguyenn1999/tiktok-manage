@@ -37,17 +37,22 @@ const SidebarContent: MenuItem[] = [
     heading: 'Công cụ',
     children: [
       {
+        name: 'Quản lý tài khoản',
+        icon: 'solar:shield-user-bold-duotone',
+        id: uniqueId(),
+        url: '/user',
+      },
+      {
         name: 'Quản lý bình luận',
         icon: 'solar:text-circle-outline',
         id: uniqueId(),
-        url: '/ui/comment',
+        url: '/comment',
       },
-
       {
         name: 'Báo cáo kênh',
         icon: 'solar:chart-square-bold',
         id: uniqueId(),
-        url: '/ui/statistical',
+        url: '/statistical',
       },
       // {
       //   name: 'Form',

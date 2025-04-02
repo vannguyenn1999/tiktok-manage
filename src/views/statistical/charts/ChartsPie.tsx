@@ -54,8 +54,8 @@ const ChartsPie: FC<ChartsPieProps> = ({ title, data, labels, width }) => {
             </div>
             <div id="html-dist"></div>
             {
-                pathname !== '/ui/statistical' && (
-                    <Link to={'/ui/statistical'}>
+                pathname !== '/statistical' && (
+                    <Link to={'/statistical'}>
                         <div className="flex items-center">
                             <Icon icon='solar:chart-2-bold' height={18} className="me-2" />
                             <span className="text-gray-900 dark:text-white">
