@@ -2,35 +2,15 @@
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from "flowbite-react";
 import { FC, useState } from "react";
 import { Icon } from "@iconify/react";
-import { uniqueId } from "lodash";
+import { RANDOM_DATA_USER } from "src/helper/CustomData";
 
 
 const AddUser: FC<any> = ({ handleAddUser }) => {
     const [openModal, setOpenModal] = useState(false);
 
     const handelUpload = () => {
-
-        const result = {
-            id: uniqueId(),
-            user: {
-                avatar:
-                    'https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/a4962965642f59b2a5fefbf47a50eb63~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=5d1f9ec9&x-expires=1743757200&x-signature=fUnIGUQmOhuntKVKqF8fM02nWDM%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my',
-                tiktok_id: 'Satoru_Ueno',
-                tiktok_name: 'satoru_ueno',
-                link_tiktok: 'https://www.tiktok.com/@satoru_ueno',
-            },
-            statistical: {
-                count_view_video: Math.floor(Math.random() * 100) + 1,
-                count_like: Math.floor(Math.random() * 100) + 1,
-                count_comment: Math.floor(Math.random() * 100) + 1,
-                count_view_profile: Math.floor(Math.random() * 100) + 1,
-                count_following: Math.floor(Math.random() * 100) + 1,
-                count_follower: Math.floor(Math.random() * 100) + 1,
-                count_share: Math.floor(Math.random() * 100) + 1,
-            },
-        }
-
-        handleAddUser(result)
+        const randomItem = RANDOM_DATA_USER[Math.floor(Math.random() * RANDOM_DATA_USER.length)];
+        handleAddUser(randomItem)
         setOpenModal(false)
     }
 
