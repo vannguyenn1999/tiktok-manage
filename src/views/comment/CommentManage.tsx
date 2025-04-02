@@ -1,5 +1,5 @@
 
-import { Avatar, Button, Checkbox, Table } from "flowbite-react";
+import { Avatar, Button, Table } from "flowbite-react";
 import { DATA_USER } from "src/helper/CustomData";
 import { Icon } from "@iconify/react";
 
