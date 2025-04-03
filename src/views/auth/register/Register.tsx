@@ -20,14 +20,12 @@ const Register = () => {
             <div className="mx-auto">
               <FullLogo />
             </div>
-            <p className="text-sm text-center text-dark my-3">
-              Sign Up on MatDash
-            </p>
+            <p className="text-2xl font-bold text-center text-dark my-3">Đăng ký</p>
             <AuthRegister />
             <div className="flex gap-2 text-base text-ld font-medium mt-6 items-center justify-center">
-              <p>Already have an Account?</p>
+              <p>Tôi đã có tài khoản?</p>
               <Link to="/auth/login" className="text-primary text-sm font-medium">
-                Sign in
+                Đăng nhập
               </Link>
             </div>
           </div>

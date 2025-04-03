@@ -3,8 +3,8 @@ import { Icon } from "@iconify/react";
 
 const Contact = () => {
     return (
-        <div className="grid grid-cols-4 gap-2">
-            <div className="bg-white rounded-xl p-5">
+        <div className="grid grid-cols-3 gap-2">
+            <div className="bg-white rounded-xl p-5 hidden">
                 <img src='https://phanmemtiktok.com/img/logo.png' alt="" className="w-20 object-contain  py-5 rounded-xl" />
                 <div className="grid grid-rows-1">
                     <span className="text-gray-900 font-bold pb-2">CÔNG TY CP ĐẦU TƯ VÀ CÔNG NGHỆ NINJA</span>
@@ -34,7 +34,7 @@ const Contact = () => {
                     <Button color="info">Nhắn tin</Button>
                     <div className="flex justify-start items-center pt-2 text-gray-950">
                         <Icon icon='solar:phone-bold' height={18} className="me-2" />
-                        <span> Hotline : <strong>0967.922.911</strong> </span>
+                        <span> Hotline : <strong>0934.568.123</strong> </span>
                     </div>
                 </div>
             </div>

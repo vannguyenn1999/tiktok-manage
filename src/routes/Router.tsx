@@ -17,7 +17,7 @@ const UsersManage = Loadable(lazy(() => import('../views/user/UsersManage')));
 const Statistical = Loadable(lazy(() => import('../views/statistical/Statistical')));
 
 // icons
-const Solar = Loadable(lazy(() => import('../views/icons/Solar')));
+// const Solar = Loadable(lazy(() => import('../views/icons/Solar')));
 
 // authentication
 const Login = Loadable(lazy(() => import('../views/auth/login/Login')));
@@ -29,7 +29,8 @@ const Router = [
     path: '/',
     element: <FullLayout />,
     children: [
-      { path: '/', exact: true, element: <Dashboard /> },
+      { path: '/', exact: true, element: <Navigate to="/auth/login" /> },
+      { path: '/home', exact: true, element: <Dashboard /> },
       { path: '/user', exact: true, element: <UsersManage /> },
       { path: '/comment', exact: true, element: <CommentManage /> },
       { path: '/statistical', exact: true, element: <Statistical /> },

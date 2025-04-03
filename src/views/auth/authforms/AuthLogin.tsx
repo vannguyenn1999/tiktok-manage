@@ -1,23 +1,25 @@
 import { Button, Checkbox, Label, TextInput } from "flowbite-react";
 import { Link, useNavigate } from "react-router";
+import { HiUser, HiLockClosed } from "react-icons/hi";
 
 
 
 const AuthLogin = () => {
   const navigate = useNavigate();
-  const handleSubmit = (event:React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(event);
-     navigate("/");
+    navigate("/home");
   }
   return (
     <>
       <form onSubmit={handleSubmit} >
         <div className="mb-4">
           <div className="mb-2 block">
-            <Label htmlFor="Username" value="Username" />
+            <Label htmlFor="Username" value="Tài khoản" />
           </div>
           <TextInput
+            icon={HiUser}
             id="Username"
             type="text"
             sizing="md"
@@ -27,9 +29,10 @@ const AuthLogin = () => {
         </div>
         <div className="mb-4">
           <div className="mb-2 block">
-            <Label htmlFor="userpwd" value="Password" />
+            <Label htmlFor="userpwd" value="Mật khẩu" />
           </div>
           <TextInput
+            icon={HiLockClosed}
             id="userpwd"
             type="password"
             sizing="md"
@@ -44,15 +47,15 @@ const AuthLogin = () => {
               htmlFor="accept"
               className="opacity-90 font-normal cursor-pointer"
             >
-              Remeber this Device
+              Ghi nhớ mật khẩu
             </Label>
           </div>
           <Link to={"/"} className="text-primary text-sm font-medium">
-            Forgot Password ?
+            Quên mật khẩu ?
           </Link>
         </div>
-        <Button type="submit" color={"primary"}  className="w-full bg-primary text-white rounded-xl">
-          Sign in
+        <Button type="submit" color={"primary"} className="w-full bg-primary text-white rounded-xl">
+          Đăng nhập
         </Button>
       </form>
     </>
