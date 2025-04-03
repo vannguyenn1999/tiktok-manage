@@ -36,7 +36,7 @@ const Header = () => {
       <header
         className={`sticky top-0 z-[5] ${isSticky
           ? "bg-white dark:bg-dark fixed w-full"
-          : "bg-white"
+          : "bg-white dark:bg-dark"
           }`}
       >
         <Navbar

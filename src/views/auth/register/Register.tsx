@@ -20,7 +20,7 @@ const Register = () => {
             <div className="mx-auto">
               <FullLogo />
             </div>
-            <p className="text-2xl font-bold text-center text-dark my-3">Đăng ký</p>
+            <p className="text-2xl font-bold text-center text-dark my-3 text-gray-900 dark:text-gray-100">Đăng ký</p>
             <AuthRegister />
             <div className="flex gap-2 text-base text-ld font-medium mt-6 items-center justify-center">
               <p>Tôi đã có tài khoản?</p>

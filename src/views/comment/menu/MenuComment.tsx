@@ -12,7 +12,7 @@ const MenuComment: FC<any> = ({ handleChooseItem, dataCommentItem }) => {
             {
                 DATA_COMMENT.map((item) => (
                     <ListItem key={item.id} onClick={() => handleChooseItem(item)}>
-                        <div className={`border-solid border-2 border-sky-500 p-3 flex justify-between cursor-pointer ${item.id === dataCommentItem?.id ? "bg-green-600 text-gray-200" : "hover:bg-slate-200"}`}>
+                        <div className={`border-solid border-2 border-sky-500 p-3 flex justify-between cursor-pointer ${item.id === dataCommentItem?.id ? "bg-green-600 dark:bg-yellow-600 text-gray-200" : "hover:bg-slate-200 dark:hover:bg-gray-400 dark:hover:text-gray-100"}`}>
                             <div className="flex justify-start items-center">
                                 <Avatar img={item.user.avatar} alt="avatar of Jese" rounded />
                                 <div className="grid grid-rows-1 ms-1 text-xs">

@@ -75,12 +75,12 @@ const MenuItemComment: FC<MenuItemCommentProps> = ({ CommentItem }) => {
             <div className="flex justify-start items-center p-5">
                 <Avatar img={CommentItem.user.avatar} alt="avatar of Jese" rounded />
                 <div className="grid grid-rows-1 ms-2 text-sm">
-                    <span className="font-bold text-gray-900">{CommentItem.user.tiktok_name}</span>
+                    <span className="font-bold text-gray-900 dark:text-gray-100">{CommentItem.user.tiktok_name}</span>
                 </div>
             </div>
-            <div className="bg-orange-200 min-h-96">
+            <div className="bg-orange-200 dark:bg-gray-600 min-h-96">
                 <div className="gird grid-rows-1 p-2 border-b-2 border-dashed border-gray-400">
-                    <span className="pb-4 text-gray-900">{CommentItem.post.title}</span>
+                    <span className="pb-4 text-gray-900 dark:text-gray-200">{CommentItem.post.title}</span>
                     <div className="flex items-center justify-start rounded-xl">
                         <img src={CommentItem.post.img_thum} alt="" className="w-32 object-contain rounded-xl" />
                     </div>

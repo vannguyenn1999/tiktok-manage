@@ -26,7 +26,7 @@ const UsersManage = () => {
   }
 
   return (
-    <div className="bg-white p-5 rounded-xl">
+    <div className="bg-white dark:bg-gray-700 p-5 rounded-xl">
       <div className="flex py-2 items-center justify-end">
         <AddUser handleAddUser={handleAddUser} />
 

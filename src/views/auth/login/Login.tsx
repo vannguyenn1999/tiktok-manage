@@ -19,7 +19,7 @@ const Login = () => {
             <div className="mx-auto">
               <FullLogo />
             </div>
-            <p className="text-2xl font-bold text-center text-dark my-3">Đăng nhập</p>
+            <p className="text-2xl font-bold text-center text-dark my-3 text-gray-900 dark:text-gray-100">Đăng nhập</p>
             <AuthLogin />
             <div className="flex gap-2 text-base text-ld font-medium mt-6 items-center justify-center">
               <p>Bạn đã có tài khoản chưa ?</p>
