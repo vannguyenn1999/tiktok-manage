@@ -4,6 +4,7 @@ import { lazy } from 'react';
 import { Navigate, createBrowserRouter } from 'react-router';
 import Loadable from 'src/layouts/full/shared/loadable/Loadable';
 
+
 /* ***Layouts**** */
 const FullLayout = Loadable(lazy(() => import('../layouts/full/FullLayout')));
 const BlankLayout = Loadable(lazy(() => import('../layouts/blank/BlankLayout')));
@@ -23,6 +24,9 @@ const Statistical = Loadable(lazy(() => import('../views/statistical/Statistical
 const Login = Loadable(lazy(() => import('../views/auth/login/Login')));
 const Register = Loadable(lazy(() => import('../views/auth/register/Register')));
 const Error = Loadable(lazy(() => import('../views/auth/error/Error')));
+const ClausePage = Loadable(lazy(() => import('../views/auth/clause/ClausePage')))
+const PrivacyPage = Loadable(lazy(() => import('../views/auth/privacy/PrivacyPage')));
+
 
 const Router = [
   {
@@ -47,6 +51,9 @@ const Router = [
     children: [
       { path: '/auth/login', element: <Login /> },
       { path: '/auth/register', element: <Register /> },
+      { path: '/auth/privacy', element: <PrivacyPage /> },
+      { path: '/auth/clause', element: <ClausePage /> },
+
       { path: '404', element: <Error /> },
       { path: '/auth/404', element: <Error /> },
       { path: '*', element: <Navigate to="/auth/404" /> },

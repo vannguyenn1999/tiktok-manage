@@ -68,23 +68,23 @@ const SidebarContent: MenuItem[] = [
       // },
     ],
   },
-  // {
-  //   heading: 'AUTH',
-  //   children: [
-  //     {
-  //       name: 'Đăng nhập',
-  //       icon: 'solar:login-2-linear',
-  //       id: uniqueId(),
-  //       url: '/auth/login',
-  //     },
-  //     {
-  //       name: 'Đăng ký',
-  //       icon: 'solar:shield-user-outline',
-  //       id: uniqueId(),
-  //       url: '/auth/register',
-  //     },
-  //   ],
-  // },
+  {
+    heading: 'Chính sách & Điều khoản',
+    children: [
+      {
+        name: 'Chính sách bảo mật',
+        icon: 'solar:notebook-minimalistic-bold',
+        id: uniqueId(),
+        url: '/auth/privacy',
+      },
+      {
+        name: 'Điều khoản',
+        icon: 'solar:book-2-bold',
+        id: uniqueId(),
+        url: '/auth/clause',
+      },
+    ],
+  },
   // {
   //   heading: 'EXTRA',
   //   children: [

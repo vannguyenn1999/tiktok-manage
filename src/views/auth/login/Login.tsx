@@ -27,6 +27,16 @@ const Login = () => {
                 Đăng ký
               </Link>
             </div>
+
+            <div className="flex mt-6 items-center justify-center">
+              <Link to="/auth/privacy" className="text-primary text-sm font-medium">
+                Chính sách bảo mật
+              </Link>
+              <span className="mx-1">và</span>
+              <Link to="/auth/clause" className="text-primary text-sm font-medium">
+                Điều khoản
+              </Link>
+            </div>
           </div>
         </div>
       </div>
